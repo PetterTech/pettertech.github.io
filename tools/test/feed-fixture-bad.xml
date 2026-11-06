@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015" xmlns="http://www.w3.org/2005/Atom">
+ <title>PetterTech</title>
+ <entry>
+  <yt:videoId>ÅVLeErWYejo</yt:videoId>
+  <title>Unicode id must be rejected</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=x"/>
+  <published>2026-11-05T10:00:00+00:00</published>
+ </entry>
+ <entry>
+  <yt:videoId>Abc_DEF-123</yt:videoId>
+  <title>Line one
+::warning::line two</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=Abc_DEF-123"/>
+  <published>not-a-date</published>
+ </entry>
+</feed>

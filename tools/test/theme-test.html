@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Theme + latest video test</title></head>
+<body>
+<!-- Run: serve the repo root on :8765, then
+     chrome-headless-shell --headless --force-dark-mode --blink-settings=preferredColorScheme=0 \
+       --virtual-time-budget=8000 --dump-dom http://127.0.0.1:8765/tools/test/theme-test.html
+     and look for RESULT lines. Assumes the OS/browser prefers DARK. -->
+<pre id="out"></pre>
+<iframe id="f" src="/" width="1200" height="900"></iframe>
+<script>
+const out = document.getElementById('out');
+const log = (ok, name, detail = '') => { out.textContent += `RESULT ${ok ? 'PASS' : 'FAIL'}  ${name} ${detail}\n`; };
+const wait = (ms) => new Promise(r => setTimeout(r, ms));
+const f = document.getElementById('f');
+const loaded = () => new Promise(r => f.addEventListener('load', r, { once: true }));
+(async () => {
+  localStorage.setItem('theme', 'evil"><img src=x>');   // garbage must be ignored
+  await loaded(); await wait(800);
+  let w = f.contentWindow, d = f.contentDocument, root = d.documentElement, btn = d.getElementById('theme-toggle');
+  log(root.dataset.theme === 'dark', 'garbage in localStorage ignored, follows system (dark)', root.dataset.theme);
+  log(!!d.querySelector('meta[http-equiv="Content-Security-Policy"]'), 'CSP meta present');
+  log(d.fonts.check('800 20px Montserrat'), 'self-hosted font loaded under CSP');
+  log(btn.getAttribute('aria-label') === 'Switch to light mode', 'label offers light', btn.getAttribute('aria-label'));
+  log(getComputedStyle(d.body).backgroundColor === 'rgb(35, 35, 35)', 'dark background #232323', getComputedStyle(d.body).backgroundColor);
+  btn.click(); await wait(100);
+  log(root.dataset.theme === 'light', 'click -> light', root.dataset.theme);
+  log(localStorage.getItem('theme') === 'light', 'light choice is remembered', String(localStorage.getItem('theme')));
+  await wait(400);
+  log(getComputedStyle(root).getPropertyValue('--bg').trim() === '#f2f2f2', 'light tokens active (--bg #f2f2f2)', getComputedStyle(root).getPropertyValue('--bg'));
+  log(getComputedStyle(d.querySelector('.logo-light')).display === 'block' && getComputedStyle(d.querySelector('.logo-dark')).display === 'none', 'dark logo shown in light mode');
+  log(d.querySelector('meta[name=theme-color]').content === '#f2f2f2', 'theme-color meta updated');
+  // reload: stored choice must win over the system setting, already at first paint
+  f.src = '/?reload'; await loaded();
+  d = f.contentDocument; root = d.documentElement;
+  log(root.dataset.theme === 'light', 'stored light survives reload', root.dataset.theme);
+  await wait(800);
+  btn = d.getElementById('theme-toggle');
+  btn.click(); await wait(100);
+  log(root.dataset.theme === 'dark', 'click -> dark', root.dataset.theme);
+  log(localStorage.getItem('theme') === null, 'back to system = nothing stored', String(localStorage.getItem('theme')));
+  // latest video
+  const yt = d.getElementById('yt'), latest = d.getElementById('latest');
+  log(yt.classList.contains('has-latest') && !latest.hidden, 'latest video shown in YouTube card');
+  log(latest.href === 'https://www.youtube.com/watch?v=SVLeErWYejo', 'latest link', latest.href);
+  log(d.getElementById('latest-title').textContent.startsWith('Run AI Locally'), 'latest title', d.getElementById('latest-title').textContent);
+  const li = d.getElementById('latest-img');
+  log(li.getAttribute('src') === '/latest-SVLeErWYejo.jpg' && li.complete && li.naturalWidth > 0, 'self-hosted thumbnail loaded under CSP', li.getAttribute('src'));
+  log(/^Latest · 4 Jun 2026$/.test(d.getElementById('latest-date').textContent), 'date label', d.getElementById('latest-date').textContent);
+  // 404 page has the toggle too and does not try to load the video
+  f.src = '/404.html'; await loaded(); await wait(500);
+  d = f.contentDocument;
+  log(!!d.getElementById('theme-toggle') && d.documentElement.dataset.theme === 'dark', '404 page themed + toggle');
+  out.textContent += 'DONE\n';
+})().catch(e => { out.textContent += 'RESULT FAIL  exception ' + e + '\nDONE\n'; });
+</script>
+</body>
+</html>

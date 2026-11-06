@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-YEEdA3otuHd8jL8QP8LsG67C6rzv7nxnKlAA7Hi9m+s='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<script>try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t==='light'||t==='dark'?t:matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}catch(e){}</script>
+<title>Petter Arnesen · PetterTech</title>
+<meta name="description" content="Petter Arnesen – Azure MVP and cloud &amp; platform dude. Hands-on Azure, platform engineering and automation videos on YouTube.">
+<link rel="canonical" href="https://pettertech.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pettertech.com/">
+<meta property="og:title" content="Petter Arnesen · PetterTech">
+<meta property="og:description" content="Cloud &amp; platform dude. I make Azure and infrastructure a little less painful – one video at a time.">
+<meta property="og:image" content="https://pettertech.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#232323">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/site.js" defer></script>
+</head>
+<body>
+<div class="page">
+  <header>
+    <a href="/" aria-label="PetterTech – home">
+      <img class="logo logo-dark" src="/assets/logo-white.png" alt="PetterTech – Better tech" width="178" height="49">
+      <img class="logo logo-light" src="/assets/logo-black.png" alt="PetterTech – Better tech" width="178" height="49">
+    </a>
+    <div class="header-actions">
+      <a class="pill" href="https://mvp.microsoft.com/en-US/mvp/profile/3846bd17-04c6-ec11-a7b5-0022482d3c49" rel="me">Azure MVP</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5 8.6 8.6 0 1 0 20.5 14.6z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+  <section class="hero">
+    <div>
+      <p class="overline"><span class="tiny-line"></span>Hi, I'm</p>
+      <h1>Petter Arnesen<span>aka <em>PetterTech.</em></span></h1>
+      <p class="tagline">Cloud &amp; platform dude. I make Azure and infrastructure a little less painful – one video at a time.</p>
+    </div>
+    <div class="portrait">
+      <svg viewBox="0 0 504 504" aria-hidden="true">
+        <g transform="rotate(-16 252 252)">
+          <path id="o1" class="orbit" d="M14,252 a238,92 0 1,0 476,0 a238,92 0 1,0 -476,0"/>
+          <circle r="3.6" class="spark"><animateMotion dur="28s" repeatCount="indefinite"><mpath href="#o1"/></animateMotion></circle>
+        </g>
+        <g transform="rotate(58 252 252)">
+          <path id="o2" class="orbit" d="M58,252 a194,58 0 1,0 388,0 a194,58 0 1,0 -388,0"/>
+          <circle r="3" class="spark"><animateMotion dur="19s" begin="-7s" repeatCount="indefinite"><mpath href="#o2"/></animateMotion></circle>
+        </g>
+      </svg>
+      <picture>
+        <source srcset="/assets/petter.webp" type="image/webp">
+        <img src="/assets/petter.jpg" alt="Petter Arnesen" width="216" height="216">
+      </picture>
+    </div>
+  </section>
+
+  <p class="label"><span class="tiny-line"></span>Start here</p>
+  <nav class="links" aria-label="Main links">
+    <article class="card primary yt" id="yt">
+      <div class="yt-body">
+        <div>
+          <span class="kicker">
+            <svg class="yt-mark" viewBox="0 0 34 24" aria-hidden="true"><rect width="34" height="24" rx="6" fill="#FF0033"/><path d="M13.5 7v10l9-5z" fill="#fff"/></svg>
+            YouTube
+          </span>
+          <h2>Watch PetterTech</h2>
+          <p>Hands-on Azure, platform engineering, automation and local AI. Relaxed pace, real demos.</p>
+        </div>
+        <a class="meta stretch" href="https://www.youtube.com/@PetterTech" rel="me"><span>youtube.com/@PetterTech</span><span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+      <!-- Filled from /latest.json (written at deploy time). Stays hidden if the file is missing. -->
+      <a class="yt-latest" id="latest" href="https://www.youtube.com/@PetterTech" hidden>
+        <span class="thumb">
+          <img id="latest-img" alt="" width="480" height="270">
+          <svg class="play" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#FF0033"/><path d="M27 14v20l17-10z" fill="#fff"/></svg>
+        </span>
+        <span class="when" id="latest-date">Latest video</span>
+        <strong id="latest-title">Latest video</strong>
+      </a>
+    </article>
+    <a class="card" href="https://github.com/PetterTech" rel="me">
+      <div>
+        <span class="kicker">
+          <svg class="gh-mark" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </span>
+        <h2>The code</h2>
+        <p>Demo code, scripts and the odd side project.</p>
+      </div>
+      <div class="meta"><span>github.com/PetterTech</span><span class="arrow" aria-hidden="true">↗</span></div>
+    </a>
+  </nav>
+
+  <p class="olde"><a href="/blog/">Ye Olde Blogge</a><small>archived musings from a simpler time</small></p>
+
+  <section class="elsewhere" aria-label="Elsewhere">
+    <p class="label"><span class="tiny-line"></span>Elsewhere</p>
+    <div class="row">
+      <a class="pill" href="https://www.linkedin.com/in/pettertech/" rel="me">LinkedIn</a>
+      <a class="pill" href="https://sessionize.com/petter-arnesen" rel="me">Sessionize</a>
+      <a class="pill" href="https://bsky.app/profile/pettertech.com" rel="me">Bluesky</a>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <span>PETTERTECH / BETTER TECH.</span>
+    <span class="mono">pettertech.com · no cookies, no tracking</span>
+  </footer>
+</div>
+</body>
+</html>

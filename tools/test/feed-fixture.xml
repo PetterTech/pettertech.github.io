@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015" xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom">
+ <title>PetterTech</title>
+ <entry>
+  <id>yt:video:AAAAAAAAAAA</id>
+  <yt:videoId>AAAAAAAAAAA</yt:videoId>
+  <title>A short about æøå &amp; "quotes"</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/AAAAAAAAAAA"/>
+  <published>2026-11-05T10:00:00+00:00</published>
+ </entry>
+ <entry>
+  <id>yt:video:SVLeErWYejo</id>
+  <yt:videoId>SVLeErWYejo</yt:videoId>
+  <title>Run AI Locally for FREE (No Cloud Required) – æøå &amp; "quotes"</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=SVLeErWYejo"/>
+  <published>2026-10-30T15:00:00+00:00</published>
+ </entry>
+</feed>
