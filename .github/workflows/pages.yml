@@ -32,7 +32,7 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Path _site -Force | Out-Null
-          Copy-Item index.html, 404.html, assets -Destination _site -Recurse
+          Copy-Item index.html, 404.html, assets, ethics -Destination _site -Recurse
 
       - name: Fetch latest YouTube upload (+ self-hosted thumbnail)
         shell: pwsh
