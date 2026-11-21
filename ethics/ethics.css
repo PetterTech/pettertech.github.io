@@ -1,0 +1,24 @@
+/* Reading-page layout. Colours and fonts come from the existing /assets/style.css. */
+.ethics{width:100%;max-width:720px;margin:42px auto 72px;overflow-wrap:anywhere}
+.ethics nav{margin-bottom:44px}
+.ethics .back-link{display:inline-flex;align-items:center;min-height:44px;color:var(--muted);font:12px var(--mono)}
+.ethics .overline{margin-bottom:16px}
+.ethics h1{font-size:clamp(46px,7vw,68px);margin-bottom:24px}
+.ethics p{font-size:16px;line-height:1.85;color:var(--soft);margin:0 0 20px}
+.ethics .intro{font-size:19px;line-height:1.75;margin-bottom:38px}
+.ethics section{margin-top:34px}
+.ethics h2{font-size:clamp(21px,3vw,25px);font-weight:800;line-height:1.35;letter-spacing:-.025em;margin:0 0 12px}
+.ethics .draft-notice{font:12px/1.7 var(--mono);color:var(--muted);border:1px dashed var(--line-strong);border-radius:10px;padding:14px 16px;margin-bottom:28px}
+.ethics article a{text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--line-strong)}
+.ethics a:hover{color:var(--ink);text-decoration-color:var(--accent-text)}
+.ethics .inspiration{border-top:1px solid var(--line);padding-top:24px;margin-top:42px;font-size:13px;color:var(--muted)}
+.ethics .inspiration a{display:inline-block;padding-block:8px}
+.ethics ul{padding-left:24px;color:var(--soft);line-height:1.85}
+.ethics li+li{margin-top:8px}
+header .theme-toggle{width:44px;height:44px;flex:none}
+@media(max-width:600px){
+  .ethics{margin-top:26px;margin-bottom:46px}
+  .ethics nav{margin-bottom:28px}
+  .ethics p{font-size:15px}
+  .ethics .intro{font-size:17px}
+}
