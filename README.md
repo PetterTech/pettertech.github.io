@@ -17,7 +17,8 @@ Plain HTML/CSS/JS, no build step, no cookies, no tracking.
 ## Layout
 
 ```
-index.html, 404.html          the pages
+index.html, 404.html          the home and 404 pages
+ethics/                       ethics page (index.html + ethics.css)
 assets/                       style.css, site.js, fonts (subset woff2), logos, photo, favicon, og.png
 tools/Update-LatestVideo.ps1  writes latest.json + latest-<id>.jpg (used by the workflow)
 tools/test/                   PowerShell + browser tests, fixtures
@@ -25,7 +26,7 @@ tools/og/og.html              source for assets/og.png (social preview, 1200x630
 .github/workflows/pages.yml   deploy on push, 3x daily (new videos) and manually
 ```
 
-Only `index.html`, `404.html` and `assets/` are published; `tools/` stays in the repo.
+`index.html`, `404.html`, `ethics/` and `assets/` are published; `tools/` stays in the repo.
 
 ## Local preview
 
