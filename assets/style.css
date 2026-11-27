@@ -95,8 +95,9 @@ h1 span em{font-style:normal;background:linear-gradient(transparent 58%,var(--ma
 .spark{fill:var(--accent);filter:drop-shadow(0 0 6px var(--accent))}
 
 /* ---------- link cards ---------- */
-.links{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:16px}
+.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .links>*{min-width:0}
+.links>.yt{grid-column:1/-1}
 .card{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:26px;min-height:190px;
   padding:26px 28px;border-radius:var(--radius);border:1px solid var(--line);background:var(--card);
   transition:transform .18s ease,border-color .18s ease,background-color .25s ease}
@@ -108,6 +109,7 @@ h1 span em{font-style:normal;background:linear-gradient(transparent 58%,var(--ma
 .card .arrow{font:700 18px var(--mono);color:var(--accent);transition:transform .18s ease}
 .card:hover .arrow{transform:translate(3px,-3px)}
 .gh-mark{width:22px;height:22px;flex:none;fill:currentColor}
+.shop-mark{width:22px;height:22px;flex:none}
 .yt-mark{width:34px;height:24px;flex:none}
 
 /* YouTube = the loudest card: white on dark, dark on light */
