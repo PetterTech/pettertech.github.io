@@ -21,6 +21,8 @@ const loaded = () => new Promise(r => f.addEventListener('load', r, { once: true
   log(root.dataset.theme === 'dark', 'garbage in localStorage ignored, follows system (dark)', root.dataset.theme);
   log(!!d.querySelector('meta[http-equiv="Content-Security-Policy"]'), 'CSP meta present');
   log(d.fonts.check('800 20px Montserrat'), 'self-hosted font loaded under CSP');
+  const shop = d.querySelector('nav[aria-label="Main links"] > a[href="https://shop.pettertech.com/"]');
+  log(!!shop && shop.classList.contains('card') && shop.querySelector('h2').textContent === 'The shop', 'shop is a main link card');
   log(btn.getAttribute('aria-label') === 'Switch to light mode', 'label offers light', btn.getAttribute('aria-label'));
   log(getComputedStyle(d.body).backgroundColor === 'rgb(35, 35, 35)', 'dark background #232323', getComputedStyle(d.body).backgroundColor);
   btn.click(); await wait(100);
