@@ -3,6 +3,8 @@
 Splash page for [pettertech.com](https://pettertech.com) – the GitHub Pages **user site** for `PetterTech`.
 Plain HTML/CSS/JS, no build step, no cookies, no tracking.
 
+- Main links: YouTube leads the "Start here" section, with GitHub and the [shop](https://shop.pettertech.com/)
+  alongside each other below it. On mobile, all three cards stack.
 - Dark/light theme: follows the OS by default; the toggle remembers the visitor's choice (localStorage), and
   picking the same as the OS goes back to "follow the OS".
 - The YouTube card shows the newest upload. `latest.json` and the thumbnail (`latest-<id>.jpg`) are generated at
